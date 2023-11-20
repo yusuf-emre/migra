@@ -22,8 +22,11 @@ namespace Migra
         [Function("Migra")]
         public void Run([TimerTrigger("0 0 * * * *")] TimerInfo myTimer)
         {
-            // Set the path to the ChromeDriver executable
-            string driverPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "chromedriver.exe");
+            // Get the current working directory
+            string currentDirectory = Environment.CurrentDirectory;
+
+            // Combine with the "drivers" folder and chromedriver.exe
+            string driverPath = Path.Combine(currentDirectory, "Drivers", "chromedriver.exe");
 
             // Initialize the ChromeDriver
             IWebDriver driver = new ChromeDriver(driverPath);
@@ -112,7 +115,7 @@ namespace Migra
                 };
 
                 SmtpClient client = new(smtpServer)
-                { 
+                {
                     Port = smtpPort,
                     Credentials = new NetworkCredential(senderEmail, senderPassword),
                     EnableSsl = true
