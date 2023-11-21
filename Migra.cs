@@ -60,7 +60,7 @@ namespace Migra
                     IWebElement ulElement = parentDiv.FindElement(By.TagName("ul"));
                     IList<IWebElement> liElements = ulElement.FindElements(By.TagName("li"));
                     string resultText = liElements[1].Text;
-                    resultText = resultText.Remove(resultText.Length - 1, 1) + " för " + caseNumber;
+                    resultText = resultText.Remove(resultText.Length - 1, 1) + (caseNumber == caseNumberOne ? " Asaf" : " Yusuf");
 
                     // if (resultText != "Migrationsverket har inte fattat ett beslut i din ansökan.")
                     // {
