@@ -22,14 +22,13 @@ namespace Migra
         [Function("Migra")]
         public void Run([TimerTrigger("0 0 * * * *")] TimerInfo myTimer)
         {
-            // Get the current working directory
-            string currentDirectory = Environment.CurrentDirectory;
+            string driverPath = Path.Combine(Environment.CurrentDirectory, "Drivers");
 
-            // Combine with the "drivers" folder and chromedriver.exe
-            string driverPath = Path.Combine(currentDirectory, "Drivers", "chromedriver.exe");
+            ChromeOptions options = new ChromeOptions();
+            options.AddArgument("--headless");
 
             // Initialize the ChromeDriver
-            IWebDriver driver = new ChromeDriver(driverPath);
+            IWebDriver driver = new ChromeDriver(driverPath, options);
 
             try
             {
