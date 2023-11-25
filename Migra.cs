@@ -73,11 +73,6 @@ namespace Migra
             {
                 _logger.LogInformation("Error: " + ex.Message);
             }
-            finally
-            {
-                // Close the browser
-                driver.Quit();
-            }
 
             void SendSMS(string resultText)
             {
