@@ -5,13 +5,20 @@
     <OutputType>Exe</OutputType>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <UserSecretsId>b0f48ad6-d7ce-40de-ae47-7e8c54b8e344</UserSecretsId>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="Azure.Storage.Blobs" Version="12.13.1" />
+    <PackageReference Include="Azure.Storage.Files.Shares" Version="12.1.0" />
+    <PackageReference Include="Azure.Storage.Queues" Version="12.11.1" />
     <PackageReference Include="Microsoft.Azure.Functions.Worker" Version="1.20.0" />
+    <PackageReference Include="Microsoft.Azure.Functions.Worker.Extensions.Storage.Blobs" Version="6.0.0" />
     <PackageReference Include="Microsoft.Azure.Functions.Worker.Extensions.Timer" Version="4.1.0" />
     <PackageReference Include="Microsoft.Azure.Functions.Worker.Sdk" Version="1.16.2" />
     <PackageReference Include="Microsoft.ApplicationInsights.WorkerService" Version="2.21.0" />
     <PackageReference Include="Microsoft.Azure.Functions.Worker.ApplicationInsights" Version="1.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Azure" Version="1.5.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="7.0.0" />
     <PackageReference Include="Selenium.WebDriver" Version="4.15.0" />
     <PackageReference Include="Twilio" Version="6.15.1" />
   </ItemGroup>
