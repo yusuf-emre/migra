@@ -24,10 +24,17 @@ namespace Migra
         {
             string driverPath = Path.Combine(Environment.CurrentDirectory, "Drivers");
 
-            ChromeOptions options = new ChromeOptions();
-            options.AddArgument("--headless");
+            // ChromeOptions options = new ChromeOptions();
+            // options.AddArgument("--headless");
 
-            // Initialize the ChromeDriver
+
+            string chromeBinaryPath = Environment.GetEnvironmentVariable("ChromeBinaryPath");
+
+            ChromeOptions options = new ChromeOptions
+            {
+                BinaryLocation = chromeBinaryPath
+            };
+
             IWebDriver driver = new ChromeDriver(driverPath, options);
 
             try
