@@ -22,18 +22,12 @@ namespace Migra
         [Function("Migra")]
         public void Run([TimerTrigger("0 0 * * * *")] TimerInfo myTimer)
         {
-            string driverPath = Path.Combine(Environment.CurrentDirectory, "Drivers");
+            string driverPath = Path.Combine(Environment.CurrentDirectory, "Drivers", "chromedriver.exe");
+            string binaryPath = Path.Combine(Environment.CurrentDirectory, "Drivers", "chrome.exe");
 
-            // ChromeOptions options = new ChromeOptions();
-            // options.AddArgument("--headless");
-
-
-            string chromeBinaryPath = Environment.GetEnvironmentVariable("ChromeBinaryPath");
-
-            ChromeOptions options = new ChromeOptions
-            {
-                BinaryLocation = chromeBinaryPath
-            };
+            ChromeOptions options = new ChromeOptions();
+            options.BinaryLocation = binaryPath;
+            options.AddArgument("--headless");
 
             IWebDriver driver = new ChromeDriver(driverPath, options);
 
