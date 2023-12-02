@@ -43,6 +43,10 @@ namespace Migra
                     // Navigate to the web page
                     driver.Navigate().GoToUrl("https://www.migrationsverket.se/Kontakta-oss/Kontrollera-din-ansokan-utan-att-logga-in.html");
 
+                    // Accept cookies
+                    IWebElement acceptCookiesButton = driver.FindElement(By.CssSelector("[class='env-button env-button--primary']"));
+                    acceptCookiesButton.Click();
+
                     // Find element, click and type in
                     IWebElement caseNumberInput = driver.FindElement(By.CssSelector("[class='env-form-input env-border--r-0-tablet-up env-border-radius--r-0-tablet-up']"));
                     caseNumberInput.Click();
