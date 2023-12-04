@@ -8,16 +8,6 @@
     <UserSecretsId>b0f48ad6-d7ce-40de-ae47-7e8c54b8e344</UserSecretsId>
   </PropertyGroup>
   <ItemGroup>
-    <None Remove="Drivers\chrome.exe" />
-    <None Remove="Drivers\chromedriver.exe" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Drivers\chrome.exe">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Drivers\chromedriver.exe" CopyToOutputDirectory="PreserveNewest" />
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="Azure.Storage.Blobs" Version="12.13.1" />
     <PackageReference Include="Azure.Storage.Files.Shares" Version="12.1.0" />
     <PackageReference Include="Azure.Storage.Queues" Version="12.11.1" />
