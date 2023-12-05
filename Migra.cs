@@ -22,8 +22,8 @@ namespace Migra
         [Function("Migra")]
         public void Run([TimerTrigger("0 0 * * * *")] TimerInfo myTimer)
         {
-            string driverPath = Path.Combine(Environment.CurrentDirectory, "chromedriver-win32");
-            string binaryPath = Path.Combine(Environment.CurrentDirectory, "chrome-win32");
+            string driverPath = Path.Combine(Environment.CurrentDirectory, "drivers", "chromedriver-win32");
+            string binaryPath = Path.Combine(Environment.CurrentDirectory, "drivers", "chrome-win32");
 
             ChromeOptions options = new ChromeOptions();
             options.BinaryLocation = binaryPath;
